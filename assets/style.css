@@ -92,58 +92,67 @@ main {
 .form-container[data-step="4"] .form-container_progress-stop:nth-child(3),
 .form-container[data-step="4"] .form-container_progress-stop:nth-child(2) {
   background-color: #9529bb;
+  transition-delay: 500ms;
+}
+
+.form-container_progress-stop::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  border-radius: 50px;
+  background-color: transparent;
+  border: 0px solid #9529bb;
+  transition:0;
+  transition-delay:0;
 }
 
 .form-container[data-step="1"]
   .form-container_progress-stop:first-child::after {
-  content: "";
-  position: absolute;
   left: -4px;
   right: -4px;
   bottom: -4px;
   top: -4px;
-  border-radius: 50px;
-  background-color: transparent;
   border: 1px solid #9529bb;
+  transition:150ms;
+  transition-delay:500ms;
 }
 
 .form-container[data-step="2"]
   .form-container_progress-stop:nth-child(2)::after {
-  content: "";
-  position: absolute;
+ 
   left: -4px;
   right: -4px;
   bottom: -4px;
   top: -4px;
-  border-radius: 50px;
-  background-color: transparent;
   border: 1px solid #9529bb;
+  transition:150ms;
+  transition-delay:500ms;
 }
 
 .form-container[data-step="3"]
   .form-container_progress-stop:nth-child(3)::after {
-  content: "";
-  position: absolute;
+
   left: -4px;
   right: -4px;
   bottom: -4px;
   top: -4px;
-  border-radius: 50px;
-  background-color: transparent;
   border: 1px solid #9529bb;
+  transition:150ms;
+  transition-delay:500ms;
 }
 
 .form-container[data-step="4"]
   .form-container_progress-stop:nth-child(4)::after {
-  content: "";
-  position: absolute;
   left: -4px;
   right: -4px;
   bottom: -4px;
   top: -4px;
-  border-radius: 50px;
-  background-color: transparent;
   border: 1px solid #9529bb;
+  transition:150ms;
+  transition-delay:500ms;
 }
 
 .form-container {
