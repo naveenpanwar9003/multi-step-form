@@ -1,0 +1,281 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 16px;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Ubuntu";
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f9f9f9;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 400;
+  margin-top: 3rem;  
+  font-size: 1.5rem;
+}
+
+.form-container_progress {
+  margin: 1rem 0 2rem 0;
+}
+
+.form-container_progress-bar {
+  height: 2px;
+  width: 100%;
+  background-color: #f6f6f6;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.form-container_progress-bar::after{
+    content:'';
+    position:absolute;
+    left: 0;
+    top:0;
+    width: 0;
+    background-color: #9529bb;
+    transition: 500ms;
+    height: 2px;
+}
+
+.form-container[data-step="2"] .form-container_progress-bar::after{
+    width: 33.33%;
+    transition: 500ms;
+}
+.form-container[data-step="3"] .form-container_progress-bar::after{
+    width: 66.66%;
+    transition: 500ms;
+}
+
+.form-container[data-step="4"] .form-container_progress-bar::after{
+    width: 100%;
+    transition: 500ms;
+}
+
+.form-container_progress-stop {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  background-color: #f6f6f6;
+  position: relative;
+}
+
+.form-container[data-step="1"] .form-container_progress-stop:first-child,
+.form-container[data-step="2"] .form-container_progress-stop:first-child,
+.form-container[data-step="3"] .form-container_progress-stop:first-child,
+.form-container[data-step="4"] .form-container_progress-stop:first-child,
+.form-container[data-step="3"] .form-container_progress-stop:nth-child(2),
+.form-container[data-step="2"] .form-container_progress-stop:nth-child(2),
+.form-container[data-step="3"] .form-container_progress-stop:nth-child(3),
+.form-container[data-step="4"] .form-container_progress-stop:nth-child(4),
+.form-container[data-step="4"] .form-container_progress-stop:nth-child(3),
+.form-container[data-step="4"] .form-container_progress-stop:nth-child(2) {
+  background-color: #9529bb;
+}
+
+.form-container[data-step="1"]
+  .form-container_progress-stop:first-child::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  top: -4px;
+  border-radius: 50px;
+  background-color: transparent;
+  border: 1px solid #9529bb;
+}
+
+.form-container[data-step="2"]
+  .form-container_progress-stop:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  top: -4px;
+  border-radius: 50px;
+  background-color: transparent;
+  border: 1px solid #9529bb;
+}
+
+.form-container[data-step="3"]
+  .form-container_progress-stop:nth-child(3)::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  top: -4px;
+  border-radius: 50px;
+  background-color: transparent;
+  border: 1px solid #9529bb;
+}
+
+.form-container[data-step="4"]
+  .form-container_progress-stop:nth-child(4)::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  top: -4px;
+  border-radius: 50px;
+  background-color: transparent;
+  border: 1px solid #9529bb;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 5px;
+  padding: 2rem;
+  box-shadow: 10px 10px 60px 10px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.form-container_slides-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 100%);
+  column-gap: 4rem;
+}
+
+.form-container[data-step="1"] .form-container_slides-container {
+  transform: translateX(0);
+  transition: 500ms;
+  transition-timing-function: cubic-bezier(1,-0.3,.05,1.35);
+}
+
+.form-container[data-step="2"] .form-container_slides-container {
+    transform: translateX(calc(-100% + -4rem));
+    transition: 500ms;
+    transition-timing-function: cubic-bezier(1,-0.3,.05,1.35);
+}
+
+.form-container[data-step="3"] .form-container_slides-container {
+    transform: translateX(calc(-200% + -8rem));
+    transition: 500ms;
+    transition-timing-function: cubic-bezier(1,-0.3,.05,1.35);
+}
+
+.form-container[data-step="4"] .form-container_slides-container {
+    transform: translateX(calc(-300% + -12rem));
+    transition: 500ms;
+    transition-timing-function: cubic-bezier(1,-0.3,.05,1.35);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.label {
+  color: #696969;
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+  display: block;
+  cursor: pointer;
+}
+
+.label span {
+  color: red;
+}
+
+.input {
+  background-color: transparent;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.input:focus {
+  border-color: #9529bb;
+  outline: none;
+  box-shadow: 0 0 2px 0 rgba(149, 41, 187, 5);
+}
+
+.input[type="number"]::-webkit-inner-spin-button,
+.input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.input[type="number"] {
+  -webkit-appearance: textfield;
+}
+
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.form-container_button-group {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  font-size: 1rem;
+  background: #9529bb;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.previous-btn {
+  background-color: rgba(149, 41, 187, 0.1);
+  color: #9529bb;
+}
+
+.form-container[data-step="1"] .previous-btn {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form-container[data-step="1"] .submit-btn,
+.form-container[data-step="2"] .submit-btn,
+.form-container[data-step="3"] .submit-btn {
+  display: none;
+}
+
+.form-container[data-step="4"] .next-btn{
+    display: none; 
+}
+
+

@@ -3,9 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Multi step form</title>
+
+    <!-- Style Css -->
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    
+    <!-- Main Start -->
+    <main>
+
+        <h3 class="heading">Multistep Form</h3>
+
+        <div class="form-container" id="form-container" data-step="1">
+            <div class="form-container_progress">
+                <div class="form-container_progress-bar">
+                    <span class="form-container_progress-stop"></span>
+                    <span class="form-container_progress-stop"></span>
+                    <span class="form-container_progress-stop"></span>
+                    <span class="form-container_progress-stop"></span>   
+                </div>
+            </div>
+            <form action="#">
+
+                    <div class="form-container_slides-container">
+
+                        <div class="form-container_slide">
+                            <div class="form-group">
+                                <label class="label" for="first-name">First Name <span>*</span></label>
+                                <input type="text" class="input" id="first-name">
+                            </div>
+                            <div class="form-group">
+                                <label class="label" for="last-name">Last Name <span>*</span></label>
+                                <input type="text" class="input" id="last-name">
+                            </div>
+                            <div class="form-group">
+                                <label class="label" for="email">Email Address <span>*</span></label>
+                                <input type="email" class="input" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label class="label" for="phone-number">Phone Number <span>*</span></label>
+                                <input type="number" class="input" id="phone-number">
+                            </div>
+                        </div>
+
+                        <div class="form-container_slide">
+                            <div class="form-group">
+                                <label class="label" for="father-name">Father's Name <span>*</span></label>
+                                <input type="text" id="father-name"class="input">
+                            </div>
+                            <div class="form-group">
+                                <label class="label" for="father-ph-number">Father's Phone Number <span>*</span></label>
+                                <input type="number" class="input" id="father-ph-number">
+                            </div>
+                            <div class="form-group">
+                                <label class="label" for="mother-name">Mother's Name<span>*</span></label>
+                                <input type="text" class="input" id="mother-name">
+                            </div>
+                            <div class="form-group">
+                                <label class="label" for="mother-ph-number">Mother's Phone Number <span>*</span></label>
+                                <input type="number" class="input" id="mother-ph-number">
+                            </div>
+                        </div>
+
+                        <div class="form-container_slide">
+                            <div class="form-group">
+                                <label class="label" for="religion">Religion <span>*</span></label>
+                                <input type="text" class="input" id="religion">
+                            </div>
+                            <div class="form-group">
+                                <label class="label" for="nationality">Nationality <span>*</span></label>
+                                <input type="text" class="input" id="nationality">
+                            </div>
+                            <div class="form-group">
+                                <label class="label" for="education-level">Higher Education Level<span>*</span></label>
+                                <input type="text" class="input" id="education-level">
+                            </div>
+                            <div class="form-group">
+                                <label class="label" for="college-university-name">Higher Education College/University <span>*</span></label>
+                                <input type="number" class="input" id="college-university-name">
+                            </div>
+                        </div>
+
+                        <div class="form-container_slide">
+                            <div class="form-group">
+                                <label class="label" for="marks-obtained">Marks Obtained (in %) <span>*</span></label>
+                                <input type="number" class="input" id="marks-obtained">
+                            </div>
+                            <div class="form-group">
+                                <label class="label" for="other-certification">Other Certifications (If multiple differentiate with ,) <span>*</span></label>
+                                <input type="text" class="input" id="other-certification">
+                            </div>
+                            <div class="form-group">
+                               <label class="label" id="agreement"><input type="checkbox">I hearby declare that all the information given above are correct</label>
+                            </div>
+                        </div>
+
+                    </div>
+            </form>
+            <div class="form-container_button-group">
+                <a href="javascript:void(0)" class="button previous-btn">Previous</a>
+                <a href="javascript:void(0)" class="button next-btn">Next</a>
+                <input type="submit" class="button submit-btn" value="submit">
+            </div>
+        </div>
+
+    </main>
+    <!-- Maine End -->
 </body>
 </html>   
